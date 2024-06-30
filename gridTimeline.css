@@ -1,0 +1,110 @@
+.overlappingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  max-width: 1000px;
+}
+
+.gridElement1 {
+  grid-column: 3;
+  grid-row: 1 / span 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.row1text {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  align-self: center;
+}
+
+.row2text {
+  grid-column: 4 / 6;
+  grid-row: 2;
+  align-self: center;
+}
+
+.row3text {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  align-self: center;
+}
+
+.row1image {
+  grid-column: 3;
+  grid-row: 1;
+  width: 40%;
+  align-self: center;
+  margin-left: 11.5em;
+  z-index: 5;
+  margin-top: 1em;
+}
+
+.row2image {
+  grid-column: 3;
+  grid-row: 2;
+  width: 40%;
+  align-self: center;
+  margin-left: -4em;
+  z-index: 5;
+}
+
+.row3image {
+  grid-column: 3;
+  grid-row: 3;
+  width: 40%;
+  align-self: center;
+  margin-left: 11.5em;
+  z-index: 5;
+  margin-top: -1em;
+}
+
+.row1circle {
+  width: 50%;
+  height: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 0;
+  padding: 25% 0;
+  border-radius: 50%;
+  background: rgb(19, 139, 143);
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  margin-top: 1em;
+}
+
+.row2circle {
+  width: 50%;
+  height: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 0;
+  padding: 25% 0;
+  border-radius: 50%;
+  background: rgb(88, 102, 134);
+  grid-column: 3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.row3circle {
+  width: 50%;
+  height: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 0;
+  padding: 25% 0;
+  border-radius: 50%;
+  background: rgb(180, 99, 108);
+  grid-column: 3;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  margin-top: -1em;
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>OCALI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="gridTimeline.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">OCALI</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mb-5">
+      <h1
+        class="text-uppercase fw-bold text-center display-2 m-4"
+        style="color: rgb(93, 111, 200)"
+      >
+        About Us
+      </h1>
+      <hr
+        class="mb-5"
+        style="
+          height: 3px;
+          border: none;
+          color: rgb(0, 0, 0);
+          background-color: rgb(0, 0, 0);
+          opacity: 1;
+        "
+      />
+
+      <div class="overlappingGrid container">
+        <div class="row1circle">2022</div>
+        <p class="row1text m-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam,.
+        </p>
+        <img
+          src="images/pie-chart-icon.png"
+          class="row1image"
+          aria-hidden="true"
+        />
+        <div class="row2circle">2023</div>
+        <p class="row2text m-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam,.
+        </p>
+        <img
+          src="images/target-icon.png"
+          class="row2image"
+          aria-hidden="true"
+        />
+        <div class="row3circle">2024</div>
+        <p class="row3text m-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam,.
+        </p>
+        <img src="images/star-icon.png" class="row3image" aria-hidden="true" />
+        <img src="images/curve-timeline.png" class="gridElement1" />
+      </div>
+
+      <h2 class="text-center fw-bold mt-5 mb-3">See What's Next:</h2>
+      <div
+        class="container col-lg-8 col-md-11"
+        x-data="{ firstname: '', lastname: '', role: '', zipcode: '', email: '', error: false, success: false }"
+      >
+        <div class="row m-2">
+          <div class="col-md-6 my-1">
+            <input
+              type="text"
+              class="form-control rounded-0"
+              style="border-color: rgb(93, 111, 200)"
+              placeholder="First Name"
+              aria-label="First name input field for joining email list form."
+              id="firstname"
+              x-model="firstname"
+            />
+          </div>
+          <div class="col-md-6 my-1">
+            <input
+              type="text"
+              class="form-control rounded-0"
+              style="border-color: rgb(93, 111, 200)"
+              placeholder="Last Name"
+              aria-label="Last name input field for joining email list form."
+              id="lastname"
+              x-model="lastname"
+            />
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col-md-6 my-1">
+            <input
+              type="text"
+              class="form-control rounded-0"
+              style="border-color: rgb(93, 111, 200)"
+              placeholder="Role"
+              aria-label="Role input field for joining email list form."
+              id="role"
+              x-model="role"
+            />
+          </div>
+          <div class="col-md-6 my-1">
+            <input
+              type="text"
+              class="form-control rounded-0"
+              style="border-color: rgb(93, 111, 200)"
+              placeholder="Zip Code"
+              aria-label="Zipcode input field for joining email list form."
+              id="zipcode"
+              x-model="zipcode"
+            />
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col">
+            <div
+              class="input-group mb-3"
+              style="border-color: rgb(93, 111, 200)"
+            >
+              <input
+                type="email"
+                class="form-control rounded-0"
+                style="border-color: rgb(93, 111, 200)"
+                placeholder="Email"
+                aria-label="Email input field for joining email list form."
+                id="email"
+                x-model="email"
+              />
+              <button
+                class="btn btn-outline-secondary px-md-5 white text-light rounded-0"
+                style="background-color: rgb(93, 111, 200)"
+                type="button"
+                id="subscribeButton"
+                aria-label="Subscribe button to join our email list."
+                @click="() =>{
+                  let userEmail= {}
+                  userEmail.firstname = firstname
+                  userEmail.lastname = lastname
+                  userEmail.role = role
+                  userEmail.zipcode = zipcode
+                  userEmail.email = email
+                  if(firstname == '' || lastname == '' || role == '' || zipcode == '' || email == ''){
+                    error = true
+                    success = false
+                  } else{
+                    error = false
+                    success = true
+                  }
+                }"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <template x-if="error">
+          <p class="text-center fw-bold">Please fill in all fields</p>
+        </template>
+        <template x-if="success">
+          <p class="text-center fw-bold">
+            Thanks
+            <span x-text="firstname" style="text-transform: capitalize"></span>,
+            you are all set!
+          </p>
+        </template>
+      </div>
+    </main>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
